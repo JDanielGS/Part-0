@@ -1,0 +1,25 @@
+---
+config:
+  theme: redux
+  layout: dagre
+---
+flowchart TD
+    A("Browser") --> C("HTTP POST: studies.cs.helsinki.fi/exampleapp/new_note")
+    C --> D("Code 302 Found")
+    B("Server") --- D
+    D --> E("HTTP: GET: https:/studies.cs.helsinki.fi/exampleapp/notes")
+    E --- F("HTML code")
+    F --> G("Browser")
+    C --- G
+    G --> H("HTTP GET: https:/studies.cs.helsinki.fi/exampleapp/main.css")
+    H --- I("Server")
+    I --> J("main.css")
+    J --> K("Browser")
+    K --> L("HTTP GET: https:/studies.cs.helsinki.fi/exampleapp/main.js")
+    L --> M("Server")
+    M --- N("main.js")
+    N --> O("Browser")
+    O --> P("HTTP GET: https:/studies.cs.helsinki.fi/exampleapp/data.json")
+    P --> Q("Server")
+    Q --- R("[{content: 'Message content', date: actualDate}]")
+    R --> S("Browser: Display the content")

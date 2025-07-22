@@ -1,0 +1,23 @@
+---
+config:
+  theme: redux
+  layout: dagre
+---
+flowchart TD
+    A("Browser")
+    B("Server")
+    A --> C("HTTP GET: https:/studies.cs.helsinki.fi/exampleapp/spa")
+    C --> B
+    B --- D("HTML Code")
+    D --> E("Browser")
+    E --> F("HTTP GET: https:/studies.cs.helsinki.fi/exampleapp/main.css")
+    F --> G("Server")
+    G --- H("main.css")
+    H --> I("Browser")
+    I --> J("HTTP GET: https:/studies.cs.helsinki.fi/exampleapp/spa.js")
+    J --> K("Server")
+    K --- L("spa.js")
+    L --> M("Browser")
+    M --> N("HTTP GET: https:/studies.cs.helsinki.fi/exampleapp/data.json")
+    N --- O("[{content: 'Content Message', date: Actual Date}]")
+    O --> P("Browser: Display the content of the JSON")

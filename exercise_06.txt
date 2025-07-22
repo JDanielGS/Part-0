@@ -1,0 +1,13 @@
+---
+config:
+  theme: redux
+  layout: dagre
+---
+flowchart TD
+    A("Browser")
+    B("Server")
+    A --> C("HTTP POST: https:/studies.cs.helsinki.fi/exampleapp/new_note_spa")
+    B --> D("Code 201 Created")
+    C --> B
+    D --> E("[{content: 'Message content', date: Actual Date}]")
+    E --> F("Browser: Display the content of the note")
